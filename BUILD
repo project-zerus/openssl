@@ -792,7 +792,13 @@ cc_library(
     'openssl/engines/e_nuron.c',
     'openssl/engines/e_sureware.c',
     'openssl/engines/e_ubsec.c'
-  ] + crypto_srcs
+  ] + crypto_srcs,
+  deps = [
+    '#dl',
+    '#pthread',
+    '#rt',
+    '//zlib:zlib',
+  ]
 )
 
 cc_binary(
